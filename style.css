@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+/* Body Styling */
+body {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Updated to a pink-themed gradient */
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Dancing script', cursive;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    width: 100%;
+}
+.greeting-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.greeting-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Greeting content styling */
+.greeting-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    position: relative;
+}
+
+.greeting-content p {
+    font-size: 26px;
+    color: #333;
+}
+
+.greeting-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 50px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Breathing Bubble */
+.breathing-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background-color: #ff8fa3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    animation: breathe 2s infinite ease-in-out;
+    z-index: 999;
+}
+
+.bubble-image {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Breathing effect for the bubble */
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Sidebar Styling */
+/* Sidebar styling */
+/* Sidebar Bubble Container */
+/* Sidebar Bubble Container */
+.sidebar-bubble {
+    position: fixed;
+    left: 20px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+    align-items: center; /* Center-align bubbles */
+  }
+  
+  /* Welcome Bubble */
+  .welcome-bubble {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ff8fa3; /* Bubble background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: breathing 2s infinite;
+    cursor: pointer;
+  }
+  
+  /* Breathing Effect */
+  @keyframes breathing {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  /* Bubble Image */
+  .bubble-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image fits within the circle */
+  }
+  
+  /* Dialog Box */
+  .dialog-box {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f5f5dc; /* Beige color for warmth */
+    color: #333; /* Text color */
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Show Dialog on Hover */
+  .welcome-bubble:hover .dialog-box {
+    opacity: 1;
+    transform: translate(-50%, -10px);
+  }
+  
+  /* Hidden by Default */
+  .dialog-box.hidden {
+    opacity: 0;
+    transform: translate(-50%, 0);
+    pointer-events: none;
+  }  
+  
+  /* Bubble Icon */
+  .bubble-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ff8fa3; /* Bubble color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  /* Hover Effect */
+  .bubble-icon:hover {
+    transform: scale(1.2); /* Increase size on hover */
+    background-color: #f472a9; /* Change color on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add a stronger shadow */
+  }
+  
+  /* Bubble Click Active Effect */
+  .bubble-icon:active {
+    transform: scale(1.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+
+/* Style for the top bar with smooth color transitions */
+/* Style for the top bar with smooth color transitions */
+/* Basic styles for the top bar */
+.top-bar {
+    position: fixed; /* Fix the top bar at the top of the screen */
+    top: 0; /* Ensure it's at the top of the page */
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #081828, #0f2449, #192c57);
+    height: 60px; /* Adjust as per your design */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    color: #8092e4;
+    font-size: 24px;
+    font-family: 'Dancing script', cursive;
+    transition: background 5s ease;
+    cursor: none; /* Hide default cursor */
+    z-index: 1000; /* Ensure it's on top of other content */
+    overflow: hidden; /* To ensure glitter effect is contained */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  /* Custom cursor: Shooting star emoji */
+  .custom-cursor {
+    position: absolute;
+    pointer-events: none;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+    animation: moveCursor 0.3s infinite;
+  }
+  
+  /* Animation for moving the shooting star cursor */
+  @keyframes moveCursor {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(20px) translateX(20px);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+  
+  /* Glitter star effect */
+  .star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    animation: glitter 1s ease-in-out infinite;
+  }
+  
+  @keyframes glitter {
+    0% {
+      opacity: 0;
+      transform: translateY(0) scale(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(20px) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(40px) scale(0);
+    }
+  }
+  
+  /* Hover effect for the top bar */
+  .top-bar:hover {
+    background: linear-gradient(to right, #1d1680, #0d477e); /* Soft color on hover */
+  }
+  
+  /* Hover effect for logo and text in the top bar */
+  .top-bar h1, .top-bar img {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .top-bar h1:hover, .top-bar img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    color: #2d0edd; /* Change color on hover */
+  }
+  .heading {
+    font-size: 36px;
+    color: #ffb3ff;
+    position: relative;
+    text-shadow: 0 0 10px #ff66ff, 0 0 20px #ff99ff;
+}
+/* Shimmer Effect */
+@keyframes shimmer {
+    0%, 100% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .heading-container {
+        flex-direction: column;
+    }
+
+    .vine {
+        width: 60px;
+        height: 150px;
+    }
+
+    .heading {
+        font-size: 28px;
+    }
+}
+
+
+/* Embedded Boxes */
+.embedded-box {
+    background: #f5f5dc; /* Beige color for warmth */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    position: relative;
+    color: #4a4a4a; /* Text color for contrast */
+    transition: all 0.3s ease;
+}
+
+.embedded-box h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+/* Draggable Boxes */
+.draggable-box {
+    position: absolute;
+    width: 300px;
+    height: 230px; /* Adjust the height for different sizes */
+    padding: 16px;
+    border-radius: 12px;
+    background-color: #f5f5dc; /* Beige color for warmth */
+    color: #4a4a4a; /* Text color for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; /* Smooth transitions */
+}
+
+.draggable-box h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+/* Buttons for Embedded and Draggable Boxes */
+.embedded-box ul li button,
+.draggable-box ul li button {
+    background-color: #291fad; /* Pink tone for buttons */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 4px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    margin: 2px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.embedded-box ul li button:hover,
+.draggable-box ul li button:hover {
+    background-color: #2c2fd3;
+    transform: scale(1.05);
+}
+
+.embedded-box ul li button:active,
+.draggable-box ul li button:active {
+    background-color: #2f32c2;
+    transform: scale(0.95);
+}
+
+/* Timer Selection and Countdown Display */
+.timer-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f5f5dc;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+.timer {
+    font-size: 16px;
+    margin-bottom: 5px solid;
+    text-align: center; /* Align text to the center */
+    background-color: #211ead; /* Dark color for the background */
+    color: #fffdff; /* Light text color for contrast */
+    padding: 3px; /* Add some padding for spacing */
+    border-radius: 12px; /* Rounded corners */
+    width: 70px; /* Width of the timer box */
+    display: block; /* Ensure the box takes up space like a block element */
+    margin: 0 auto; /* Center align the timer box horizontally */
+}
+
+.timer-container h2 {
+    font-size: 38px;
+    margin-bottom: auto;
+}
+
+.timer-container .timer-duration {
+    font-size: 40px;
+    margin-bottom: auto;
+}
+
+/* Timer Dropdown */
+/* Buttons for Timer Controls */
+.timer-msg button {
+    background-color: #2736c4; /* Pink tone for buttons */
+    color: white;
+    border: none;
+    border-radius: 10px; /* Slightly more rounded */
+    padding: 12px 20px; /* Slightly more padding for a softer look */
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.3s ease;
+    margin: 8px;
+}
+
+.timer-msg button:hover {
+    background-color: #4736e0; /* Slightly darker pink for hover */
+    transform: scale(1.05); /* Slight scale-up effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.timer-msg button:active {
+    background-color: #5446cc; /* Even darker pink for active */
+    transform: scale(0.95); /* Slight scale-down effect */
+    box-shadow: none; /* Remove shadow on active */
+}
+
+/* Timer Dropdown */
+.timer-duration-select {
+    background-color: #6f77e2; /* Light pink */
+    color: #1b1717;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timer-duration-select:hover {
+    background-color: #2535c5; /* Slightly darker pink for hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+/* Timer Countdown Display */
+.timer-display {
+    font-size: 32px;
+    font-weight: bold;
+    color: #161111;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Countdown Timer Styling */
+.countdown-timer {
+    font-size: 32px;
+    font-weight: bold;
+    color: #3329c0;
+    margin-top: 15px;
+}
+/* Input field styling */
+
+        /* Task List Container */
+.task-container {
+            background-color: #f5f5dc;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            margin: 0 auto;
+ }
+
+        /* Task List */
+.task-list {
+            list-style-type: none;
+            padding: 0;
+ }
+
+        /* Individual Task Item */
+.task-item {
+            font-size: 18px;
+           font-family: sans-serif;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #ffffff;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+}
+
+        /* Checkmark */
+.checkmark {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #2f25b4;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+}
+
+.checkmark.checked {
+            background-color: #4caf50; /* Green when checked */
+            text-decoration: line-through; /* Cross off text */
+}
+
+.task-item.completed {
+            text-decoration: line-through;
+            color: #a1a1a1;
+}
+
+        /* Input field and add button */
+.task-input-container {
+            display: flex;
+            margin-bottom: 15px;
+}
+
+.task-input {
+            width: 80%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+}
+
+.add-task-button {
+            width: 20%;
+            padding: 10px;
+            background-color: #2b1f8f;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+}
+
+.add-task-button:hover {
+            background-color: #4c4ab8;
+}
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+.sidebar, .embedded-box, .timer, .task-box, .music-box {
+    font-family: 'Dancing script', cursive;
+}
+.content {
+    display: flex;
+}
+html, body {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Set the width to 100% of the viewport */
+    height: 100%; /* Set the height to 100% of the viewport */
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  .main-container {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    display: flex; /* Flexbox layout for child elements */
+    flex-direction: column; /* Stack children vertically (optional) */
+    position: relative; /* Make it the base for absolute positioning */
+  }
+  
+  .ghibli-wallpaper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  
