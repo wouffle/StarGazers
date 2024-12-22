@@ -358,7 +358,40 @@ function addTask() {
       taskInput.value = '';
   }
 }
+const addTaskButton = document.getElementById('add-task-button');
+const newTaskInput = document.getElementById('task-item');
+const taskList = document.getElementById('task-list');
+const taskOrganizer = document.querySelector('.task-container');
 
+// Function to update the height of the task organizer based on the number of tasks
+function updateOrganizerHeight() {
+  const taskCount = taskList.children.length; // Get the number of tasks
+  const baseHeight = 150; // Set a base height for the task organizer
+  const taskHeight = 50; // Set the height for each task
+
+  // Dynamically calculate the new height of the task organizer
+  taskOrganizer.style.height = `${baseHeight + (taskCount * taskHeight)}px`;
+}
+
+// Function to add a new task
+addTaskButton.addEventListener('click', () => {
+  const taskText = newTaskInput.value.trim();
+  
+  if (taskText !== '') {
+    // Create a new list item for the task
+    const taskItem = document.createElement('li');
+    taskItem.textContent = taskText;
+    
+    // Append the task item to the task list
+    taskList.appendChild(taskItem);
+    
+    // Clear the input field
+    newTaskInput.value = '';
+
+    // Update the height of the task organizer
+    updateOrganizerHeight();
+  }
+});
 // Function to toggle the completion of a task
 function toggleTask(checkmarkElement) {
   const taskItem = checkmarkElement.parentElement;
