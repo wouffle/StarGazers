@@ -34,7 +34,12 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
-
+#quote-display p {
+  font-size: 22px;
+  margin: 5px 0;
+  color: white;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
 .greeting-modal {
     position: fixed;
     top: 0;
@@ -50,12 +55,7 @@ body {
     visibility: hidden;
     transition: all 0.3s ease-in-out;
 }
-#quote-display p {
-  font-size: 22px;
-  margin: 5px 0;
-  color: white;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-}
+
 .greeting-modal {
     position: fixed;
     top: 0;
@@ -89,7 +89,7 @@ body {
 
 .greeting-content p {
     font-size: 26px;
-    color: #333;
+    color: #0c0c0c;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
