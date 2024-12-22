@@ -2,19 +2,59 @@
 
 /* Body Styling */
 body {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Updated to a pink-themed gradient */
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Dancing script', cursive;
+  background: linear-gradient(180deg, #011736, #0c2446, #3e6ca0); /* Deep blues and purples for a starry night vibe */
+  background-size: 100% 100%;
+  overflow: hidden;
+  color: #fff;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dancing script', cursive;
 }
 
 /* Main Container */
 .main-container {
     display: flex;
     width: 100%;
+}
+.cosmic-whispers-container {
+  position: fixed;
+  top: 65px;
+  right: 20px;
+  width: 250px;
+  height: 250px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #011736, #0c2446, #3e6ca0); 
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.greeting-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+#quote-display p {
+  font-size: 22px;
+  margin: 5px 0;
+  color: white;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 .greeting-modal {
     position: fixed;
@@ -31,12 +71,10 @@ body {
     visibility: hidden;
     transition: all 0.3s ease-in-out;
 }
-
 .greeting-modal.show {
     opacity: 1;
     visibility: visible;
 }
-
 /* Greeting content styling */
 .greeting-content {
     background: #fff;
@@ -46,17 +84,33 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     max-width: 400px;
     position: relative;
+    background: linear-gradient(45deg, rgba(106, 92, 188, 0.8), rgba(62, 140, 65, 0.8)), url('images/greeting popup.gif'); /* Add your image path here */
 }
 
 .greeting-content p {
     font-size: 26px;
     color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .greeting-image {
-    width: 150px;
-    height: auto;
-    margin-bottom: 15px;
+  width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  border-radius: 0%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+  animation: subtle-breathing 3s infinite; /* Breathing effect */
+}
+/* Keyframes for subtle breathing effect */
+@keyframes subtle-breathing {
+  0%, 100% {
+      transform: scale(1); /* Normal size */
+  }
+  50% {
+      transform: scale(1.03); /* Slightly larger */
+  }
 }
 
 .close-btn {
@@ -350,14 +404,17 @@ body {
 /* Draggable Boxes */
 .draggable-box {
     position: absolute;
-    width: 300px;
+    width: 250px;
     height: 230px; /* Adjust the height for different sizes */
     padding: 16px;
     border-radius: 12px;
     background-color: #f5f5dc; /* Beige color for warmth */
-    color: #4a4a4a; /* Text color for contrast */
+    color: #D9D9D9; /* Text color for contrast */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease; /* Smooth transitions */
+    margin-top: auto 0px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(45deg, rgba(106, 92, 188, 0.8), rgba(62, 140, 65, 0.8)), url('images/star sky.gif'); /* Add your image path here */
 }
 
 .draggable-box h2 {
@@ -368,8 +425,8 @@ body {
 /* Buttons for Embedded and Draggable Boxes */
 .embedded-box ul li button,
 .draggable-box ul li button {
-    background-color: #291fad; /* Pink tone for buttons */
-    color: white;
+    background-color: #5446cc; /* Pink tone for buttons */
+    color: #D9D9D9;
     border: none;
     border-radius: 10px;
     padding: 8px 4px;
@@ -378,17 +435,20 @@ body {
     cursor: pointer;
     margin: 2px;
     transition: background-color 0.3s, transform 0.2s;
+    background: linear-gradient(45deg, #6A5ACD, #7B68EE);
+    color: #D9D9D9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .embedded-box ul li button:hover,
 .draggable-box ul li button:hover {
-    background-color: #2c2fd3;
+    background-color: #8A2BE2;
     transform: scale(1.05);
 }
 
 .embedded-box ul li button:active,
 .draggable-box ul li button:active {
-    background-color: #2f32c2;
+    background-color: #8A2BE2;
     transform: scale(0.95);
 }
 
@@ -411,8 +471,8 @@ body {
     font-size: 16px;
     margin-bottom: 5px solid;
     text-align: center; /* Align text to the center */
-    background-color: #211ead; /* Dark color for the background */
-    color: #fffdff; /* Light text color for contrast */
+    background-color: #8A2BE2; /* Dark color for the background */
+    color: #D9D9D9; /* Light text color for contrast */
     padding: 3px; /* Add some padding for spacing */
     border-radius: 12px; /* Rounded corners */
     width: 70px; /* Width of the timer box */
@@ -433,8 +493,8 @@ body {
 /* Timer Dropdown */
 /* Buttons for Timer Controls */
 .timer-msg button {
-    background-color: #2736c4; /* Pink tone for buttons */
-    color: white;
+    background-color: #5446cc; /* Pink tone for buttons */
+    color: #D9D9D9;
     border: none;
     border-radius: 10px; /* Slightly more rounded */
     padding: 12px 20px; /* Slightly more padding for a softer look */
@@ -460,7 +520,7 @@ body {
 /* Timer Dropdown */
 .timer-duration-select {
     background-color: #6f77e2; /* Light pink */
-    color: #1b1717;
+    color: #D9D9D9;
     font-size: 16px;
     padding: 10px;
     border-radius: 12px;
@@ -472,7 +532,7 @@ body {
 }
 
 .timer-duration-select:hover {
-    background-color: #2535c5; /* Slightly darker pink for hover */
+    background-color: #A3E4F9; /* Slightly darker pink for hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
 }
 
@@ -489,14 +549,14 @@ body {
 .countdown-timer {
     font-size: 32px;
     font-weight: bold;
-    color: #3329c0;
+    color: #8A2BE2;
     margin-top: 15px;
 }
 /* Input field styling */
 
         /* Task List Container */
 .task-container {
-            background-color: #f5f5dc;
+            background-color: #F7C5E6;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 300px;
@@ -512,11 +572,12 @@ body {
 
         /* Individual Task Item */
 .task-item {
-            font-size: 18px;
-           font-family: sans-serif;
-            padding: 10px;
+            font-size: 14px;
+           font-family: Arial, Helvetica, sans-serif;
+            padding: 5px;
             margin: 5px 0;
-            background-color: #ffffff;
+            background-color: #0c2446;
+            text-emphasis-color: #0000;
             border-radius: 5px;
             display: flex;
             justify-content: space-between;
@@ -526,51 +587,58 @@ body {
 
         /* Checkmark */
 .checkmark {
-            width: 20px;
+             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background-color: #2f25b4;
+            background-color: #6f77e2;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #ffffff;
             font-size: 14px;
 }
 
 .checkmark.checked {
-            background-color: #4caf50; /* Green when checked */
+           background-color: #000000;
             text-decoration: line-through; /* Cross off text */
 }
 
 .task-item.completed {
             text-decoration: line-through;
-            color: #a1a1a1;
+           color: #f8f5f5;
 }
 
         /* Input field and add button */
 .task-input-container {
-            display: flex;
+           display: flex;
             margin-bottom: 15px;
+            padding-right: 5px;
+            border-right: 500px;
+            padding: 5px; /* Optional padding inside the input area */
+            margin-bottom: 10px; /* Adds space below the input container */
+            margin-right: 20px;
 }
 
 .task-input {
             width: 80%;
             padding: 10px;
-            border: 2px solid #ccc;
+           border: 2px solid #020000;
             border-radius: 5px;
             font-size: 16px;
 }
 
 .add-task-button {
-            width: 20%;
-            padding: 10px;
-            background-color: #2b1f8f;
-            border: none;
-            border-radius: 5px;
+             width: 25%;
+            background-color: #6f77e2;
+            border-radius: 90%;
             color: white;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 24px;
+            border-left: 10px;
+            text-align: center;
+            padding: 10px 15px; /* Makes the button look more spacious */
+            margin-left: 20px;
 }
 
 .add-task-button:hover {
