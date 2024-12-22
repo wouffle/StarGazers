@@ -15,6 +15,13 @@
       <h1 class="heading">Stargazers</h1>
   </div>
   </header>
+  <!-- Cosmic Whispers Section -->
+ <div id="cosmic-whispers" class="cosmic-whispers-container">
+  <div class="cloud-container">
+    <h2>Cosmic Whispers ★彡</h2>
+    <div id="quote-display">
+      <p>You are boundless, just like the stars you see</p>
+    </div>
       <!-- Greeting Pop-up -->
       <div id="greeting-modal" class="greeting-modal">
         <div class="greeting-content">
@@ -37,13 +44,13 @@
               <div class="dialog-box hidden">Hey! You're here :) </div>
             </div>
             <div class="bubble-icon" onclick="showFunction('music-box')">
-              🎵
+              ♫
             </div>
             <div class="bubble-icon" onclick="showFunction('timer-box')">
-              ⏱
+              ⴵ
             </div>
             <div class="bubble-icon" onclick="showFunction('task-box')">
-              📝
+              ☑
             </div>
           </div>
       </nav>
@@ -62,15 +69,15 @@
       <section id="music-box" class="hidden embedded-box draggable-box">
         <h2>Music</h2>
         <ul>
-          <li><button onclick="playMusic('calm')">Calm</button></li>
-          <li><button onclick="playMusic('productive')">Productive</button></li>
-          <li><button onclick="playMusic('focus')">Focus</button></li>
+          <li><button onclick="playMusic('calm')">⋆｡˚ ☁︎ ˚Calm｡⋆｡˚☽˚｡⋆</button></li>
+          <li><button onclick="playMusic('productive')">‧₊˚🖇️✩Productive ₊˚🎧⊹♡</button></li>
+          <li><button onclick="playMusic('focus')">𓆝 𓆟 Focus 𓆞 𓆝 𓆟</button></li>
         </ul>
         <iframe id="spotify-player" src="" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
       </section>
   
       <section id="timer-box" class="hidden embedded-box draggable-box">
-        <h2>Pomodoro Timer</h2>
+        <h2>Pomodoro Timer⋆⭒˚｡⋆</h2>
         <div>
           <p>Select the time Duration</p>
           <select id="timer-duration" class="timer-duration-select">
@@ -80,21 +87,21 @@
           </select>
         </div>
       
-        <div id="timer" class="timer">00:00</div>
+        <div id="timer" class="timer">𝟷𝟷:𝟷𝟷</div>
         <div id="timer-msg" class="timer-msg">
-          <button id="start-btn" onclick="startTimer()">Start</button>
-          <button id="pause-btn" onclick="pauseTimer()">Pause</button>
-          <button id="reset-btn" onclick="resetTimer()">Reset</button>
+          <button id="start-btn" onclick="startTimer()">▶</button>
+          <button id="pause-btn" onclick="pauseTimer()">❚❚</button>
+          <button id="reset-btn" onclick="resetTimer()">↻</button>
         </div>
         <!-- Countdown Timer -->
         <div id="countdown" class="countdown-timer"></div>
       </section>
       
       <section id="task-box" class="hidden embedded-box draggable-box">
-        <h2>Task Organizer</h2>
+        <h2>Task Organizer ✎ᝰ.</h2>
         <div class="task-input-container">
           <input type="text" id="taskInput" class="task-input" placeholder="Add a new task" />
-          <button class="add-task-button" onclick="addTask()">Add Task</button>
+          <button class="add-task-button" onclick="addTask()">+</button>
       </div>
       <ul class="task-list" id="taskList">
         <!-- Tasks will be added here -->
