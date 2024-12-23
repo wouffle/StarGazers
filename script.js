@@ -289,11 +289,6 @@ function createGlitter(x, y) {
   }, 1000); // Adjust time for glitter duration
 }
 
-// Optional: Display a greeting message when the user arrives
-window.addEventListener('load', () => {
-  alert("Hey! You're here :) Welcome to the website!");
-});
-
 // Change color every 5 seconds
 setInterval(changeTopBarColor, 5000);
 
@@ -392,6 +387,7 @@ addTaskButton.addEventListener('click', () => {
     updateOrganizerHeight();
   }
 });
+
 // Function to toggle the completion of a task
 function toggleTask(checkmarkElement) {
   const taskItem = checkmarkElement.parentElement;
@@ -422,4 +418,3 @@ function addToGoogleCalendar(task) {
       }
   });
 }
-
