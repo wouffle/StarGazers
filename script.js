@@ -185,16 +185,13 @@ function toggleSidebar() {
 }
 // List of wallpapers
 const wallpapers = [
-  "images/cosmos-1853491_1280.jpg", 
   "images/stars-1654074_1280.jpg",
   "images/sky-space-dark-galaxy.jpg",
   "images/pexels-photo-4100130.jpeg",
   "images/pexels-photo-2085998.jpeg",
   "images/pexels-photo-1933316.jpeg",
   "images/pexels-photo-1567069.jpeg",
-  "images/pexels-photo-1563355.jpeg",
   "images/pexels-photo-1242764.jpeg",
-  "images/pexels-photo-1001682.jpeg",
   "images/pexels-photo-635279.jpeg",
   "images/pexels-photo-461940.jpeg",
   "images/pexels-photo-417074.jpeg",
@@ -308,7 +305,7 @@ function closeGreeting() {
   bubble.style.transition = "all 0.3s ease";
   bubble.style.bottom = "20px";
   bubble.style.right = "20px";
-  bubble.innerHTML = '<img src="images/cute-character-bubble.jpg" alt="Cute Character" class="bubble-image">';
+  bubble.innerHTML = '<img src="images/down bubble.gif" alt="Cute Character" class="bubble-image">';
 }
 
 // Function to open the greeting again from the bubble
