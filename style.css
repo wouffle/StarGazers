@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 /* Body Styling */
 body {
@@ -23,12 +24,15 @@ body {
 /* Cosmic Whispers Box */
 #cosmic-whispers-box {
   position: fixed;
-  top: 60px;
-  right: 20px;
+  top: 80px;
+  right: 15px;
   width: 300px;
   padding: 20px;
-  background: linear-gradient(135deg, #ffb3b3, #ffe6cc);
-  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(0, 0, 50, 0.7), rgba(50, 50, 100, 0.7)), url('images/cosmic wallpaper.gif');
+  background-size: cover; /* GIF covers the entire box */
+  background-position: center; /* Center the GIF */
+  background-repeat: no-repeat; /* Prevent tiling */
+  border-radius: 25px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   overflow: hidden; /* Ensures stars stay inside */
@@ -37,11 +41,18 @@ body {
 
 /* Whisper Text */
 #cosmic-whisper-content {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 1.2rem;
-  color: #4a4a4a;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: #A8D0E6;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), 0px 0px 10px rgba(0, 0, 0, 0.2);  /* Soft, subtle text shadow */
   text-align: center;
   margin-bottom: 10px;
+}
+
+#cosmic-whispers-box h2 {
+  font-size: 1.6rem;
+  text-align:center;
+  text-shadow:#c1c6e4;
 }
 
 /* Button Group Styling */
@@ -64,11 +75,15 @@ body {
   cursor: pointer;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
+  background: linear-gradient(
+      rgba(202, 214, 230, 0.678), 
+      rgba(146, 189, 238, 0.5)
+    ), url('images/cosmic buttons.gif');
 }
 
 /* Button Hover Effects */
 .button-group button:hover {
-  background: #ff657a;
+  background: #5d69d3;
   transform: translateY(-3px);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -307,38 +322,141 @@ body {
     pointer-events: none;
   }  
   
-  /* Bubble Icon */
-  .bubble-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #ff8fa3; /* Bubble color */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 24px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-    background: linear-gradient(45deg, rgba(106, 92, 188, 0.8), rgba(106, 92, 188, 0.8)), url('images/twinkiling stars.gif');
-    background-size: cover; /* Ensures the image covers the bubble */
-    background-position: center; /* Centers the image within the bubble */
-}
-  
-/* Hover Effect */
-.bubble-icon:hover {
-    transform: scale(1.2); /* Increase size on hover */
-    background-color: #f472a9; /* Change color on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add a stronger shadow */
-}
-  
-/* Bubble Click Active Effect */
-.bubble-icon:active {
-    transform: scale(1.1);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+/* Bubble Icon */
+.bubble-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ff8fa3; /* Bubble color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  background: linear-gradient(45deg, rgba(106, 92, 188, 0.8), rgba(106, 92, 188, 0.8)), url('images/twinkiling stars.gif');
+  background-size: cover; /* Ensures the image covers the bubble */
+  background-position: center; /* Centers the image within the bubble */
 }
 
+/* Hover Effect */
+.bubble-icon:hover {
+  transform: scale(1.2); /* Increase size on hover */
+  background-color: #f472a9; /* Change color on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add a stronger shadow */
+}
+
+/* Bubble Click Active Effect */
+.bubble-icon:active {
+  transform: scale(1.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust Space Between Sidebar Bubbles */
+.bubble-icon, .apod-bubble {
+  margin-top: 10px; /* Add extra margin */
+}
+
+/* APOD Bubble */
+.apod-bubble {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ff8fa3; /* Bubble color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  background: linear-gradient(45deg, rgba(106, 92, 188, 0.8), rgba(106, 92, 188, 0.8)), url('images/twinkiling stars.gif');
+  background-size: cover; /* Ensures the image covers the bubble */
+  background-position: center; /* Centers the image within the bubble */
+}
+
+.apod-bubble:hover {
+  transform: scale(1.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* APOD Dialog Box */
+.apod-dialog-box {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f5f5dc; /* Beige color for warmth */
+  color: #333; /* Text color */
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* APOD Modal */
+.apod-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.apod-modal.show {
+  display: flex;
+  flex-direction: column;
+}
+
+.apod-modal-text {
+  position: absolute;
+  bottom: 10%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  width: 80%;
+}
+
+.apod-modal-close {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #573db6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* APOD Image */
+.apod-image {
+  max-width: 100%; /* Image scales within its container */
+  height: auto; /* Height adjusts automatically */
+  object-fit: contain; /* Keeps the aspect ratio intact */
+  display: block; /* Removes any inline-block spacing */
+  margin: 0 auto; /* Centers the image horizontally */
+  border-radius: 10px; /* Optional for rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
 
 /* Style for the top bar with smooth color transitions */
 /* Style for the top bar with smooth color transitions */
@@ -745,8 +863,8 @@ body {
     display: flex;
 }
 html, body {
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove default padding */
+    margin: 0 auto; /* Center without adding excess spacing */
+    padding: 10px; /* Add minimal padding */
     width: 100%; /* Set the width to 100% of the viewport */
     height: 100%; /* Set the height to 100% of the viewport */
     overflow: hidden; /* Prevent scrolling */
