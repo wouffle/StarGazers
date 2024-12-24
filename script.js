@@ -319,99 +319,177 @@ function openGreeting() {
 // Show greeting when the page loads
 window.onload = showGreeting;
 
-function addTask() {
-  const taskInput = document.getElementById('taskInput');
-  const taskText = taskInput.value.trim();
+// Function to add a task
+function addTask(taskText) {
+  if (taskText.trim() !== '') {
+    const taskList = document.getElementById('task-list');
 
-  if (taskText !== '') {
-      const taskList = document.getElementById('taskList');
-      
-      // Create a new task item
-      const taskItem = document.createElement('li');
-      taskItem.classList.add('task-item');
-
-      // Create the task text
-      const taskTextSpan = document.createElement('span');
-      taskTextSpan.textContent = taskText;
-
-      // Create the checkmark button
-      const checkmarkSpan = document.createElement('span');
-      checkmarkSpan.classList.add('checkmark');
-      checkmarkSpan.onclick = function() { toggleTask(checkmarkSpan); };
-
-      // Append the task text and checkmark to the task item
-      taskItem.appendChild(taskTextSpan);
-      taskItem.appendChild(checkmarkSpan);
-
-      // Append the task item to the task list
-      taskList.appendChild(taskItem);
-
-      // Clear the input field
-      taskInput.value = '';
-  }
-}
-const addTaskButton = document.getElementById('add-task-button');
-const newTaskInput = document.getElementById('task-item');
-const taskList = document.getElementById('task-list');
-const taskOrganizer = document.querySelector('.task-container');
-
-// Function to update the height of the task organizer based on the number of tasks
-function updateOrganizerHeight() {
-  const taskCount = taskList.children.length; // Get the number of tasks
-  const baseHeight = 150; // Set a base height for the task organizer
-  const taskHeight = 50; // Set the height for each task
-
-  // Dynamically calculate the new height of the task organizer
-  taskOrganizer.style.height = `${baseHeight + (taskCount * taskHeight)}px`;
-}
-
-// Function to add a new task
-addTaskButton.addEventListener('click', () => {
-  const taskText = newTaskInput.value.trim();
-  
-  if (taskText !== '') {
-    // Create a new list item for the task
+    // Create a new task item
     const taskItem = document.createElement('li');
-    taskItem.textContent = taskText;
-    
+    taskItem.classList.add('task-item');
+
+    // Create the task text span
+    const taskTextSpan = document.createElement('span');
+    taskTextSpan.textContent = taskText;
+
+    // Create the checkmark button
+    const checkmarkSpan = document.createElement('span');
+    checkmarkSpan.classList.add('checkmark');
+    checkmarkSpan.onclick = function () {
+      toggleTask(checkmarkSpan);
+    };
+
+    // Append the checkmark and task text to the task item
+    taskItem.appendChild(checkmarkSpan); // Add checkmark first
+    taskItem.appendChild(taskTextSpan); // Add task text after checkmark
+
     // Append the task item to the task list
     taskList.appendChild(taskItem);
-    
-    // Clear the input field
-    newTaskInput.value = '';
+
+   // Clear the task input field after adding the task
+    document.getElementById('task-input').value = '';
 
     // Update the height of the task organizer
     updateOrganizerHeight();
   }
-});
+}
 
-// Function to toggle the completion of a task
+// Function to update the height of the task organizer based on the number of tasks
+function updateOrganizerHeight() {
+  const taskList = document.getElementById('task-list');
+  const taskCount = taskList.children.length; // Get the number of tasks
+  const baseHeight = 150; // Set a base height for the task organizer
+  const taskHeight = 50; // Set the height for each task
+  const taskOrganizer = document.querySelector('.task-container');
+  taskOrganizer.style.height = `${baseHeight + taskCount * taskHeight}px`; // Dynamically adjust height
+}
+
+// Function to toggle the completed state of a task
 function toggleTask(checkmarkElement) {
   const taskItem = checkmarkElement.parentElement;
-  taskItem.classList.toggle('completed');
+  taskItem.classList.toggle('completed'); // Toggle completed class
 
   if (taskItem.classList.contains('completed')) {
-      checkmarkElement.textContent = '✓'; // Add tick mark when task is checked
-      checkmarkElement.classList.add('checked');
+    checkmarkElement.classList.add('checked'); // Add the checked class
+    checkmarkElement.textContent = '✓'; // Show the checkmark tick
   } else {
-      checkmarkElement.textContent = ''; // Remove tick mark when task is unchecked
-      checkmarkElement.classList.remove('checked');
+    checkmarkElement.classList.remove('checked'); // Remove checked class
+    checkmarkElement.textContent = ''; // Remove the tick mark
   }
 }
 
-function addToGoogleCalendar(task) {
-  gapi.client.calendar.events.insert({
-      calendarId: 'primary',
-      resource: {
-          summary: task,
-          start: {
-              dateTime: new Date().toISOString(),
-              timeZone: 'Asia/Kolkata'
-          },
-          end: {
-              dateTime: new Date(new Date().getTime() + 3600000).toISOString(),
-              timeZone: 'Asia/Kolkata'
-          }
-      }
-  });
+// Event listener for the Add Task button
+const addTaskButton = document.getElementById('add-task-button');
+const newTaskInput = document.getElementById('task-input'); // Ensure consistent ID
+addTaskButton.addEventListener('click', () => {
+  const taskText = newTaskInput.value.trim();
+  if (taskText !== '') {
+    addTask(taskText); // Use the reusable addTask function
+    newTaskInput.value = ''; // Clear the input field
+  }
+});
+
+
+
+//function addToGoogleCalendar(task) {
+  //gapi.client.calendar.events.insert({
+     // calendarId: 'primary',
+     // r//esource: {
+        //  summary: task,
+//start: {
+           //   dateTime: new Date().toISOString(),
+            //  timeZone: 'Asia/Kolkata'
+         // },
+          //end: {
+           //   dateTime: new Date(new Date().getTime() + 3600000).toISOString(),
+           //   timeZone: 'Asia/Kolkata'
+          //}
+    //  }
+  //});
+//}/
+// GSAP Animations
+gsap.registerPlugin();
+
+// Select elements
+const starsContainer = document.getElementById("stars-container");
+const whisperBox = document.getElementById("cosmic-whispers-box");
+const whisperContent = document.getElementById("cosmic-whisper-content");
+const favoriteBtn = document.getElementById("favorite-btn");
+const shareBtn = document.getElementById("share-btn");
+const nextBtn = document.getElementById("next-btn");
+
+// Array of cosmic whispers
+const whispers = [
+  "The stars remind us we're never alone.",
+  "Every star is a dream waiting to come true.",
+  "Look up; the universe is speaking to you.",
+  "The night sky holds endless possibilities.",
+  "You are stardust with a soul of fire.",
+];
+
+// Track the current whisper index
+let currentWhisperIndex = 0;
+
+// Function to create falling stars
+function createFallingStars() {
+  for (let i = 0; i < 10; i++) {
+    const star = document.createElement("div");
+    star.classList.add("star");
+
+    // Randomize star position and delay
+    const x = Math.random() * whisperBox.offsetWidth; // Horizontal position
+    const y = Math.random() * -50; // Start above the box
+    const delay = Math.random() * 1; // Stagger animation
+
+    star.style.left = `${x}px`;
+    star.style.top = `${y}px`;
+    star.style.animationDelay = `${delay}s`;
+
+    starsContainer.appendChild(star);
+
+    // Remove the star after animation ends
+    star.addEventListener("animationend", () => star.remove());
+  }
 }
+
+// Add click event for the whisper box (falling stars)
+whisperBox.addEventListener("click", createFallingStars);
+
+// Add functionality to the buttons
+favoriteBtn.addEventListener("click", () => {
+  // Add to favorites with an animation
+  gsap.to(whisperBox, { scale: 1.1, duration: 0.2, yoyo: true, repeat: 1 });
+  alert("Whisper added to favorites!");
+});
+
+shareBtn.addEventListener("click", () => {
+  // Copy the current whisper to clipboard
+  const whisper = whisperContent.innerText;
+  navigator.clipboard.writeText(whisper).then(() => {
+    gsap.fromTo(
+      whisperBox,
+      { rotate: 0 },
+      { rotate: 10, duration: 0.1, yoyo: true, repeat: 3 }
+    );
+    alert("Whisper copied to clipboard!");
+  });
+});
+
+nextBtn.addEventListener("click", () => {
+  // Switch to the next whisper with falling stars
+  createFallingStars();
+
+  // Cycle through the whispers array
+  currentWhisperIndex = (currentWhisperIndex + 1) % whispers.length;
+
+  // Update the whisper content
+  whisperContent.innerText = whispers[currentWhisperIndex];
+
+  // Add a subtle shimmer animation
+  gsap.fromTo(
+    whisperContent,
+    { opacity: 0, scale: 0.9 },
+    { opacity: 1, scale: 1, duration: 0.5 }
+  );
+});
+
