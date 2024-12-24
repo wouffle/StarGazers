@@ -190,21 +190,19 @@ const wallpapers = [
   "images/pexels-photo-4100130.jpeg",
   "images/pexels-photo-2085998.jpeg",
   "images/pexels-photo-1933316.jpeg",
-  "images/pexels-photo-1567069.jpeg",
-  "images/pexels-photo-1242764.jpeg",
-  "images/pexels-photo-635279.jpeg",
-  "images/pexels-photo-461940.jpeg",
-  "images/pexels-photo-417074.jpeg",
   "images/pexels-photo-360912.jpeg",    
-  "images/wp9870760.jpg",
-  "images/wp8114822.jpg",
-  "images/wp3181476.webp",
   "images/uwp4592893.webp",
   "images/star-trails-8306233_1280.webp",
   "images/stars-2177771_1280.jpg",
   "images/stars-1655504_1280.jpg",
   "images/space-7709489_1280.jpg",
   "images/polar-lights-5858656_1280.jpg",
+  "images/nature-landscape-with-starry-clear-sky_23-2151683063.jpg",
+  "images/starry-clear-sky-view-with-nature-landscape_23-2151683165.jpg",
+  "images/ursa-major-ursa-minor-constellations_23-2150028873.jpg",
+  "images/view-starry-night-sky-with-nature-mountains-landscape_23-2151614815.jpg",
+  "images/view-starry-night-sky-with-nature-mountains-landscape_23-2151614817.jpg",
+  "images/3d-background-with-island-sea_1048-8856.jpg",
 ];
 
 // Get the wallpaper container
@@ -347,7 +345,7 @@ function addTask(taskText) {
     taskList.appendChild(taskItem);
 
    // Clear the task input field after adding the task
-    document.getElementById('task-input').value = '';
+      document.getElementById('task-input').value = '';
 
     // Update the height of the task organizer
     updateOrganizerHeight();
@@ -425,6 +423,16 @@ const whispers = [
   "Look up; the universe is speaking to you.",
   "The night sky holds endless possibilities.",
   "You are stardust with a soul of fire.",
+  "The stars are the jewels of the night, illuminating the vast sky with their cosmic beauty.",
+  "The sky is not the limit; it's just the beginning of the cosmic journey.",
+  "In the vastness of the universe, every star has its own story to tell.",
+  "We are all made of stardust, floating in this beautiful cosmic dance.",
+  "Stars can't shine without darkness, and the cosmos can't be understood without wonder.",
+  "The universe is full of magical things, patiently waiting for our eyes to be sharper.",
+  "To confine the sky to the edge of the horizon is to limit your imagination.",
+  "Stars are the eternal fireflies of the night, twinkling in the cosmic sea.",
+  "The night sky is a canvas, and the stars are the paint strokes of the universe.",
+  "When you gaze at the stars, you're looking at the past, but dreaming of the future."
 ];
 
 // Track the current whisper index
@@ -493,3 +501,40 @@ nextBtn.addEventListener("click", () => {
   );
 });
 
+// Fetch and display APOD image
+const apodBubble = document.getElementById('apodBubble');
+const apodModal = document.getElementById('apodModal');
+const apodModalText = document.getElementById('apodModalText');
+const apodModalClose = document.getElementById('apodModalClose');
+
+// Fetch NASA's Astronomy Picture of the Day (APOD)
+const fetchAPOD = async () => {
+    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+    const data = await response.json();
+
+    // Set the modal background image and text
+    apodModal.style.backgroundImage = `url(${data.url})`;
+    apodModalText.innerHTML = `Astronomical Photo by NASA today: ${data.title}`;
+};
+
+// Open the APOD image modal
+function showAPOD() {
+    fetchAPOD();
+    apodModal.classList.add('show');
+}
+
+// Close the APOD image modal
+apodModalClose.addEventListener('click', () => {
+    apodModal.classList.remove('show');
+});
+function showApodModal(imageUrl) {
+  const modal = document.getElementById('apodModal');
+  const image = document.getElementById('apodImage');
+  image.src = imageUrl; // Set the APOD image URL
+  modal.style.display = 'flex'; // Show the modal
+}
+
+function closeApodModal() {
+  const modal = document.getElementById('apodModal');
+  modal.style.display = 'none'; // Hide the modal
+}
