@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Scripts:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <title>StarGazers</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,13 +17,19 @@
       <h1 class="heading">Stargazers</h1>
   </div>
   </header>
-  <!-- Cosmic Whispers Section -->
- <div id="cosmic-whispers" class="cosmic-whispers-container">
-  <div class="cloud-container">
-    <h2>Cosmic Whispers ★彡</h2>
-    <div id="quote-display">
-      <p>You are boundless, just like the stars you see</p>
-    </div>
+ <!-- Cosmic Whispers Section -->
+ <div id="cosmic-whispers-box">
+  <h2>Cosmic whispers</h2>
+  <p id="cosmic-whisper-content">"The stars remind us we're never alone."</p>
+  <div class="button-group">
+    <button id="favorite-btn" title="Favorite">❤</button>
+    <button id="share-btn" title="Share">🔗</button>
+    <button id="next-btn" title="Next">➡</button>
+  </div>
+  <div id="stars-container"></div>
+</div>
+
+
       <!-- Greeting Pop-up -->
       <div id="greeting-modal" class="greeting-modal">
         <div class="greeting-content">
@@ -32,7 +40,7 @@
     </div>
     <!-- Breathing Bubble -->
     <div id="bubble" class="breathing-bubble" onclick="openGreeting()">
-        <img src="images/cute-character-bubble.jpg" alt="Cute Character in Bubble" class="bubble-image">
+        <img src="images/down bubble.gif" alt="Cute Character in Bubble" class="bubble-image">
     </div>
   <div class="main-container">
     <aside class="sidebar">
@@ -40,16 +48,16 @@
         <div class="sidebar-bubble">
           <div class="sidebar-bubble">
             <div class="welcome-bubble">
-              <img src="images/eyes_open_cartoon.jpg" alt="Welcome" class="bubble-image" />
+              <img src="images/welcome bubble.gif" alt="Welcome" class="bubble-image" />
               <div class="dialog-box hidden">Hey! You're here :) </div>
             </div>
-            <div class="bubble-icon" onclick="showFunction('music-box')">
+            <div class="bubble-icon" id="bubble1" onclick="showFunction('music-box')">
               ♫
             </div>
-            <div class="bubble-icon" onclick="showFunction('timer-box')">
+            <div class="bubble-icon" id="bubble2" onclick="showFunction('timer-box')">
               ⴵ
             </div>
-            <div class="bubble-icon" onclick="showFunction('task-box')">
+            <div class="bubble-icon" id="bubble3" onclick="showFunction('task-box')">
               ☑
             </div>
           </div>
@@ -59,15 +67,10 @@
     <div class="content">
       <div class="ghibli-wallpaper" id="wallpaper"></div>
       <div class="wallpaper-images" style="display: none;">
-        <img src="images/photo-1498590880827-3f79fdcd7fbe.avif" alt="Wallpaper 1">
-        <img src="images/photo-1497294815431-9365093b7331.avif" alt="Wallpaper 2">
-        <img src="images/photo-1494253188410-ff0cdea5499e.avif" alt="Wallpaper 3">
-        <img src="images/photo-1487715433499-93acdc0bd7c3.avif" alt="Wallpaper 4">
-        <img src="images/photo-1477840539360-4a1d23071046.avif" alt="Wallpaper 5">
       </div>      
   
       <section id="music-box" class="hidden embedded-box draggable-box">
-        <h2>Music</h2>
+        <h2>Music⋆.˚✮🎧✮˚.⋆</h2>
         <ul>
           <li><button onclick="playMusic('calm')">⋆｡˚ ☁︎ ˚Calm｡⋆｡˚☽˚｡⋆</button></li>
           <li><button onclick="playMusic('productive')">‧₊˚🖇️✩Productive ₊˚🎧⊹♡</button></li>
@@ -99,15 +102,16 @@
       
       <section id="task-box" class="hidden embedded-box draggable-box">
         <h2>Task Organizer ✎ᝰ.</h2>
-        <div class="task-input-container">
-          <input type="text" id="taskInput" class="task-input" placeholder="Add a new task" />
-          <button class="add-task-button" onclick="addTask()">+</button>
-      </div>
-      <ul class="task-list" id="taskList">
-        <!-- Tasks will be added here -->
-    </ul>
+        <div class="task-input-container" id="task-input-container">
+          <input type="text" id="task-input" class="task-input" placeholder="Add a new task" />
+          <button id="add-task-button" class="add-task-button"> ✎ </button>
         </div>
-    </section>
+        <ul class="task-list" id="task-list">
+          <!-- Tasks will be added here -->
+        </ul>
+      </section>
+      
+    
     
     </div>
   </div>
