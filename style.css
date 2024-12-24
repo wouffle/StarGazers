@@ -19,27 +19,111 @@ body {
     display: flex;
     width: 100%;
 }
-.cosmic-whispers-container {
+/* Cosmic Whispers Box */
+/* Cosmic Whispers Box */
+#cosmic-whispers-box {
   position: fixed;
-  top: 65px;
+  top: 60px;
   right: 20px;
-  width: 250px;
-  height: 250px;
-  z-index: 100;
+  width: 300px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffb3b3, #ffe6cc);
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow: hidden; /* Ensures stars stay inside */
+  animation: shimmer 3s infinite; /* Shimmer effect */
+}
+
+/* Whisper Text */
+#cosmic-whisper-content {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Button Group Styling */
+.button-group {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(45deg, #011736, #0c2446, #3e6ca0); 
-  border-radius: 50%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  justify-content: space-between;
+  margin-top: 10px;
 }
-#quote-display p {
-  font-size: 22px;
-  margin: 5px 0;
+
+/* Buttons */
+.button-group button {
+  width: 30%;
+  padding: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #ff8fa3;
   color: white;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
 }
+
+/* Button Hover Effects */
+.button-group button:hover {
+  background: #ff657a;
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Active Effects */
+.button-group button:active {
+  transform: translateY(2px);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    box-shadow: 0 0 10px 3px rgba(255, 223, 186, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px 6px rgba(255, 223, 186, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px 3px rgba(255, 223, 186, 0.5);
+  }
+}
+
+/* Falling Stars Container */
+#stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Prevent interference with buttons */
+  overflow: hidden;
+}
+
+/* Star Styling */
+.star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #fff, #ffdd99);
+  border-radius: 50%;
+  animation: fall 2s ease-in forwards;
+  opacity: 0;
+}
+
+/* Falling Stars Animation */
+@keyframes fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(200px) scale(0.5);
+  }
+}
+
 .greeting-modal {
     position: fixed;
     top: 0;
@@ -544,101 +628,112 @@ body {
 /* Input field styling */
 
         /* Task List Container */
+/* Task Container */
 .task-container {
-            background-color: #F7C5E6;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            padding: 20px;
-            margin: 0 auto;
- }
+  background-color: #F7C5E6;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  margin: 0 auto;
+  position: relative;
+}
 
+/* Task List Container Styling */
         /* Task List */
 .task-list {
-            list-style-type: none;
-            padding: 0;
- }
+          list-style-type: none;
+          padding: 0;
+}
 
-        /* Individual Task Item */
+      /* Individual Task Item */
 .task-item {
-            font-size: 14px;
-           font-family: Arial, Helvetica, sans-serif;
-            padding: 5px;
-            margin: 5px 0;
-            background-color: #0c2446;
-            text-emphasis-color: #0000;
-            border-radius: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
+          font-size: 14px;
+         font-family: Arial, Helvetica, sans-serif;
+          padding: 5px;
+          margin: 5px 0;
+          background-color: #0c2446;
+          text-emphasis-color: #0000;
+          border-radius: 5px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          outline: none;
 }
 
-        /* Checkmark */
+      /* Checkmark */
 .checkmark {
-             width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: #6f77e2;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-size: 14px;
+           width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: #6f77e2;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ffffff;
+          font-size: 14px;
 }
 
+/* Checkmark when task is completed */
 .checkmark.checked {
-           background-color: #000000;
-            text-decoration: line-through; /* Cross off text */
+  background-color: #000000;  /* Change background when checked */
+  color: #ffffff;  /* Keep checkmark color white */
 }
 
+
+/* Task item when completed */
 .task-item.completed {
-            text-decoration: line-through;
-           color: #f8f5f5;
+  text-decoration: line-through;
+  color: #f8f5f5;
 }
 
-        /* Input field and add button */
+/* Input field and add button container */
 .task-input-container {
-           display: flex;
-            margin-bottom: 15px;
-            padding-right: 5px;
-            border-right: 500px;
-            padding: 5px; /* Optional padding inside the input area */
-            margin-bottom: 10px; /* Adds space below the input container */
-            margin-right: 20px;
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  width: 100%;
 }
 
+/* Task input field */
 .task-input {
-            width: 80%;
-            height: 15px;
-            padding: 10px;
-            border: 2px solid;
-            background-color: #c1c6e4;
-            border-radius: 5px;
-            font-size: 16px;
-            text-decoration: dotted;
+  width: 80%;
+  height: 15px;
+  padding: 10px;
+  border: 2px solid;
+  background-color: #c1c6e4;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: dotted;
 }
 
+
+/* Add task button */
 .add-task-button {
-            width: 25%;
-            background-color: #6f77e2;
-            border-radius: 90%;
-            color: white;
-            cursor: pointer;
-            font-size: 22px;
-            border-left: 10px;
-            size:10px;
-            text-align: center;
-            padding: 10px 15px; /* Makes the button look more spacious */
-            margin-left: 20px;
-            margin-top: -10px;
-
+  width: 15%;
+  background-color: #6f77e2;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 22px;
+  border: none;
+  text-align: center;
+  padding: 10px;
+  margin-left: 10px;
+  margin-top: 0;
+  transition: background-color 0.3s ease;
 }
 
+/* Add task button hover effect */
 .add-task-button:hover {
-            background-color: #4c4ab8;
+  background-color: #4c4ab8;
 }
+
+
 /* Hidden Class */
 .hidden {
     display: none;
