@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <title>StarGazers</title>
@@ -45,25 +46,46 @@
   <div class="main-container">
     <aside class="sidebar">
       <nav>
-        <div class="sidebar-bubble">
           <div class="sidebar-bubble">
-            <div class="welcome-bubble">
-              <img src="images/welcome bubble.gif" alt="Welcome" class="bubble-image" />
-              <div class="dialog-box hidden">Hey! You're here :) </div>
-            </div>
-            <div class="bubble-icon" id="bubble1" onclick="showFunction('music-box')">
-              ♫
-            </div>
-            <div class="bubble-icon" id="bubble2" onclick="showFunction('timer-box')">
-              ⴵ
-            </div>
-            <div class="bubble-icon" id="bubble3" onclick="showFunction('task-box')">
-              ☑
-            </div>
+              <div class="welcome-bubble">
+                  <img src="images/welcome bubble.gif" alt="Welcome" class="bubble-image" />
+                  <div class="dialog-box hidden">Hey! You're here :) </div>
+              </div>
+  
+              <!-- Music Bubble Icon -->
+              <div class="bubble-icon" id="bubble1" onclick="showFunction('music-box')">
+                  ♫
+              </div>
+  
+              <!-- Timer Bubble Icon -->
+              <div class="bubble-icon" id="bubble2" onclick="showFunction('timer-box')">
+                  ⴵ
+              </div>
+  
+              <!-- Task Organizer Bubble Icon -->
+              <div class="bubble-icon" id="bubble3" onclick="showFunction('task-box')">
+                  ☑
+              </div>
+  
+              <!-- APOD Bubble Icon (Astronomy Picture of the Day) -->
+              <div class="apod-bubble" id="apodBubble" onclick="showAPOD()">
+                  <div class="apod-bubble-icon">
+                      🌌
+                  </div>
+                  <div class="apod-dialog-box hidden">
+                      Astronomy Picture of the Day
+                  </div>
+              </div>
           </div>
       </nav>
-    </aside>
+  </aside>
   
+  <!-- APOD Modal to display image as a wallpaper -->
+  <div class="apod-modal" id="apodModal">
+      <div class="apod-modal-text" id="apodModalText"></div>
+      <button class="apod-modal-close" id="apodModalClose">Go Back</button>
+  </div>
+
     <div class="content">
       <div class="ghibli-wallpaper" id="wallpaper"></div>
       <div class="wallpaper-images" style="display: none;">
