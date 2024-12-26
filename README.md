@@ -11,7 +11,7 @@ With soothing aesthetics, built-in calming music, and practical tools like a Pom
 - **🎵 Built-in Music Box:** Enjoy calming tunes via an embedded Spotify music box.  
 - **⏱️ Pomodoro Timer:** Stay focused with a Ghibli-inspired Pomodoro timer, featuring customizable break options.  
 - **📂 Task Organizer:** A simple to-do-list with a checkmark
-- **🌟 Greeting Popup: Be greeted with a personalized, heartwarming message every time you visit the site, setting a positive and welcoming tone.
+- **🌟 Greeting Popup:** Be greeted with a personalized, heartwarming message every time you visit the site, setting a positive and welcoming tone.
 - ### ✨ Cosmic Whispers  
 Cosmic Whispers is a feature designed to inspire and uplift users with random motivational quotes or soothing messages styled as "whispers from the cosmos." Each whisper creates a serene and inspiring atmosphere, helping users feel connected to the vastness of the universe.  
 
