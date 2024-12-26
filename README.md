@@ -10,7 +10,23 @@ With soothing aesthetics, built-in calming music, and practical tools like a Pom
 ## ✨ Key Features  
 - **🎵 Built-in Music Box:** Enjoy calming tunes via an embedded Spotify music box.  
 - **⏱️ Pomodoro Timer:** Stay focused with a Ghibli-inspired Pomodoro timer, featuring customizable break options.  
-- **📂 Task Organizer:** A simple to-do-list with a checkmark  
+- **📂 Task Organizer:** A simple to-do-list with a checkmark
+- **🌟 Greeting Popup: Be greeted with a personalized, heartwarming message every time you visit the site, setting a positive and welcoming tone.
+- ### ✨ Cosmic Whispers  
+Cosmic Whispers is a feature designed to inspire and uplift users with random motivational quotes or soothing messages styled as "whispers from the cosmos." Each whisper creates a serene and inspiring atmosphere, helping users feel connected to the vastness of the universe.  
+
+#### Key Functionalities:  
+- **💖 Favorite a Whisper:**  
+  Mark whispers that resonate with you as favorites to save them for later. Favorites will be stored locally, allowing you to revisit them anytime.  
+
+- **📋 Share via Clipboard:**  
+  Share the magic with others by copying whispers to your clipboard. Easily paste them into messages, emails, or social media to spread positivity.  
+
+- **🔄 Change the Whisper:**  
+  Not feeling the current whisper? Refresh to summon a new cosmic whisper that aligns better with your mood or needs.  
+
+This feature adds a touch of personalization and engagement, making Stargazers not just a productivity tool but also a source of daily encouragement and mindfulness.  
+
 
 ---
 
@@ -40,5 +56,4 @@ This project is inspired by the love for the night sky and the desire to create 
 ---
 
 ## 🌌 How to Use  
-- Link to my live website on GitHub pages
--  https://wouffle.github.io/StarGazers/
+- Link to my live website on GitHub pages - https://wouffle.github.io/StarGazers/
