@@ -27,7 +27,7 @@ Cosmic Whispers is a feature designed to inspire and uplift users with random mo
 
 This feature adds a touch of personalization and engagement, making Stargazers not just a productivity tool but also a source of daily encouragement and mindfulness.  
 
-### 🪐 Astronomical Picture of the Day by NASA  
+- ### 🪐 Astronomical Picture of the Day by NASA  
 Stay inspired by exploring the wonders of the universe with the **Astronomical Picture of the Day** (APOD) feature. This integration pulls the latest breathtaking images of the cosmos from NASA’s APOD API and displays them on the Stargazers website.
 
 #### Key Functionalities:  
