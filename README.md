@@ -47,7 +47,8 @@ This project is inspired by the love for the night sky and the desire to create 
 ## 🛠️ Tech Stack  
 - **Frontend:** HTML, CSS, JavaScript   
 - **APIs:** Spotify API for music integration, and many more. 
-- **Design:** Dark mode with a serene, galaxy-inspired color palette  
+- **Design:** Dark mode with a serene, galaxy-inspired color palette
+- **GSAP-Animations:** Added shinner and fairy effects for fun cursor movement
 
 ---
 
