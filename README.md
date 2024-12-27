@@ -17,7 +17,7 @@ Cosmic Whispers is a feature designed to inspire and uplift users with random mo
 
 #### Key Functionalities:  
 - **💖 Favorite a Whisper:**  
-  Mark whispers that resonate with you as favorites to save them for later. Favorites will be stored locally, allowing you to revisit them anytime.  
+  Mark whispers that resonate with you as favorites to build similar recurrence.
 
 - **📋 Share via Clipboard:**  
   Share the magic with others by copying whispers to your clipboard. Easily paste them into messages, emails, or social media to spread positivity.  
