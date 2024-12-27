@@ -2,9 +2,11 @@
 **Discover serenity, inspiration, and organization all in one place.**  
 
 ## 🌠 About Stargazers  
+
 Stargazers is a chill, user-friendly web app designed for star and galaxy lovers who appreciate calm vibes and want to stay organized.  
 With soothing aesthetics, built-in calming music, and practical tools like a Pomodoro timer and to-do lists, Stargazers aims to create a serene productivity space.  
 This version of this website is most suitable for desktop users.
+
 ---
 
 ## ✨ Key Features  
