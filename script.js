@@ -538,7 +538,3 @@ function closeApodModal() {
   const modal = document.getElementById('apodModal');
   modal.style.display = 'none'; // Hide the modal
 }
-function close button() {
-const modal = 
-document.getElementById('close');
-modal.style.display = 'none'; // Close the button on bottom 
