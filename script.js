@@ -69,7 +69,6 @@ function resetTimer() {
   updateTimerDisplay();
 }
 
-
 function playMusic(type) {
   let playlistURL = "";
   if (type === "calm") {
@@ -120,20 +119,20 @@ document.querySelectorAll('.draggable-box').forEach(box => {
   }
 });
 
-  // Function to show or hide a specific function section
+// Function to show or hide a specific function section
 function toggleFunction(id) {
-    const box = document.getElementById(id);
-    box.classList.toggle('hidden');
-  }
+  const box = document.getElementById(id);
+  box.classList.toggle('hidden');
+}
 let isSidebarOpen = false;
 
 function toggleSidebar() {
   const sidebar = document.querySelector('.sidebar');
   const coveringEyes = document.querySelector('.cartoon-covering-eyes');
   const openEyes = document.querySelector('.cartoon-open-eyes');
-  
+
   isSidebarOpen = !isSidebarOpen;
-  
+
   if (isSidebarOpen) {
     sidebar.style.width = "250px"; // Expands the sidebar to show the menu items
     coveringEyes.classList.add('hidden');
@@ -183,6 +182,7 @@ function toggleSidebar() {
     sidebar.style.width = "50px";  // Sidebar collapsed to just eye icons
   }
 }
+
 // List of wallpapers
 const wallpapers = [
   "images/stars-1654074_1280.jpg",
@@ -190,7 +190,7 @@ const wallpapers = [
   "images/pexels-photo-4100130.jpeg",
   "images/pexels-photo-2085998.jpeg",
   "images/pexels-photo-1933316.jpeg",
-  "images/pexels-photo-360912.jpeg",    
+  "images/pexels-photo-360912.jpeg",
   "images/uwp4592893.webp",
   "images/star-trails-8306233_1280.webp",
   "images/stars-2177771_1280.jpg",
@@ -240,6 +240,7 @@ document.querySelector('.welcome-bubble').addEventListener('mouseover', () => {
 document.querySelector('.welcome-bubble').addEventListener('mouseout', () => {
   document.querySelector('.dialog-box').classList.add('hidden');
 });
+
 // Function to change the color of the top bar over time
 let colors = [
   "linear-gradient(to right,rgb(40, 25, 180),rgb(58, 30, 184))",
@@ -344,8 +345,8 @@ function addTask(taskText) {
     // Append the task item to the task list
     taskList.appendChild(taskItem);
 
-   // Clear the task input field after adding the task
-      document.getElementById('task-input').value = '';
+    // Clear the task input field after adding the task
+    document.getElementById('task-input').value = '';
 
     // Update the height of the task organizer
     updateOrganizerHeight();
@@ -387,23 +388,21 @@ addTaskButton.addEventListener('click', () => {
   }
 });
 
-
-
 //function addToGoogleCalendar(task) {
-  //gapi.client.calendar.events.insert({
-     // calendarId: 'primary',
-     // r//esource: {
-        //  summary: task,
+//gapi.client.calendar.events.insert({
+// calendarId: 'primary',
+// r//esource: {
+//  summary: task,
 //start: {
-           //   dateTime: new Date().toISOString(),
-            //  timeZone: 'Asia/Kolkata'
-         // },
-          //end: {
-           //   dateTime: new Date(new Date().getTime() + 3600000).toISOString(),
-           //   timeZone: 'Asia/Kolkata'
-          //}
-    //  }
-  //});
+//   dateTime: new Date().toISOString(),
+//  timeZone: 'Asia/Kolkata'
+// },
+//end: {
+//   dateTime: new Date(new Date().getTime() + 3600000).toISOString(),
+//   timeZone: 'Asia/Kolkata'
+//}
+//  }
+//});
 //}/
 // GSAP Animations
 gsap.registerPlugin();
@@ -509,23 +508,23 @@ const apodModalClose = document.getElementById('apodModalClose');
 
 // Fetch NASA's Astronomy Picture of the Day (APOD)
 const fetchAPOD = async () => {
-    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
-    const data = await response.json();
+  const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+  const data = await response.json();
 
-    // Set the modal background image and text
-    apodModal.style.backgroundImage = `url(${data.url})`;
-    apodModalText.innerHTML = `Astronomical Photo by NASA today: ${data.title}`;
+  // Set the modal background image and text
+  apodModal.style.backgroundImage = `url(${data.url})`;
+  apodModalText.innerHTML = `Astronomical Photo by NASA today: ${data.title}`;
 };
 
 // Open the APOD image modal
 function showAPOD() {
-    fetchAPOD();
-    apodModal.classList.add('show');
+  fetchAPOD();
+  apodModal.classList.add('show');
 }
 
 // Close the APOD image modal
 apodModalClose.addEventListener('click', () => {
-    apodModal.classList.remove('show');
+  apodModal.classList.remove('show');
 });
 function showApodModal(imageUrl) {
   const modal = document.getElementById('apodModal');

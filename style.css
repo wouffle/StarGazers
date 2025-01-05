@@ -3,7 +3,8 @@
 
 /* Body Styling */
 body {
-  background: linear-gradient(180deg, #011736, #0c2446, #3e6ca0); /* Deep blues and purples for a starry night vibe */
+  background: linear-gradient(180deg, #011736, #0c2446, #3e6ca0);
+  /* Deep blues and purples for a starry night vibe */
   background-size: 100% 100%;
   overflow: hidden;
   color: #fff;
@@ -17,9 +18,10 @@ body {
 
 /* Main Container */
 .main-container {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
+
 /* Cosmic Whispers Box */
 /* Cosmic Whispers Box */
 #cosmic-whispers-box {
@@ -29,14 +31,19 @@ body {
   width: 300px;
   padding: 20px;
   background: linear-gradient(135deg, rgba(0, 0, 50, 0.7), rgba(50, 50, 100, 0.7)), url('images/cosmic wallpaper.gif');
-  background-size: cover; /* GIF covers the entire box */
-  background-position: center; /* Center the GIF */
-  background-repeat: no-repeat; /* Prevent tiling */
+  background-size: cover;
+  /* GIF covers the entire box */
+  background-position: center;
+  /* Center the GIF */
+  background-repeat: no-repeat;
+  /* Prevent tiling */
   border-radius: 25px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  overflow: hidden; /* Ensures stars stay inside */
-  animation: shimmer 3s infinite; /* Shimmer effect */
+  overflow: hidden;
+  /* Ensures stars stay inside */
+  animation: shimmer 3s infinite;
+  /* Shimmer effect */
 }
 
 /* Whisper Text */
@@ -44,15 +51,16 @@ body {
   font-family: 'Great Vibes', cursive;
   font-size: 1.5rem;
   color: #A8D0E6;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), 0px 0px 10px rgba(0, 0, 0, 0.2);  /* Soft, subtle text shadow */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), 0px 0px 10px rgba(0, 0, 0, 0.2);
+  /* Soft, subtle text shadow */
   text-align: center;
   margin-bottom: 10px;
 }
 
 #cosmic-whispers-box h2 {
   font-size: 1.6rem;
-  text-align:center;
-  text-shadow:#c1c6e4;
+  text-align: center;
+  text-shadow: #c1c6e4;
 }
 
 /* Button Group Styling */
@@ -75,10 +83,8 @@ body {
   cursor: pointer;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
-  background: linear-gradient(
-      rgba(202, 214, 230, 0.678), 
-      rgba(146, 189, 238, 0.5)
-    ), url('images/cosmic buttons.gif');
+  background: linear-gradient(rgba(202, 214, 230, 0.678),
+      rgba(146, 189, 238, 0.5)), url('images/cosmic buttons.gif');
 }
 
 /* Button Hover Effects */
@@ -99,9 +105,11 @@ body {
   0% {
     box-shadow: 0 0 10px 3px rgba(255, 223, 186, 0.5);
   }
+
   50% {
     box-shadow: 0 0 20px 6px rgba(255, 223, 186, 0.8);
   }
+
   100% {
     box-shadow: 0 0 10px 3px rgba(255, 223, 186, 0.5);
   }
@@ -112,7 +120,8 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Prevent interference with buttons */
+  pointer-events: none;
+  /* Prevent interference with buttons */
   overflow: hidden;
 }
 
@@ -133,6 +142,7 @@ body {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+
   100% {
     opacity: 0;
     transform: translateY(200px) scale(0.5);
@@ -140,40 +150,43 @@ body {
 }
 
 .greeting-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
 }
+
 .greeting-modal.show {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
+
 /* Greeting content styling */
 .greeting-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
-    position: relative;
-    background: linear-gradient(45deg, rgba(106, 92, 188, 0.8), rgba(62, 140, 65, 0.8)), url('images/greeting popup.gif'); /* Add your image path here */
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  position: relative;
+  background: linear-gradient(45deg, rgba(106, 92, 188, 0.8), rgba(62, 140, 65, 0.8)), url('images/greeting popup.gif');
+  /* Add your image path here */
 }
 
 .greeting-content p {
-    font-size: 26px;
-    color: #0c0c0c;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-size: 26px;
+  color: #0c0c0c;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .greeting-image {
@@ -182,61 +195,73 @@ body {
   margin-bottom: 15px;
   margin-top: 10px;
   border-radius: 0%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
-  animation: subtle-breathing 3s infinite; /* Breathing effect */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Light shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  /* Smooth transitions */
+  animation: subtle-breathing 3s infinite;
+  /* Breathing effect */
 }
+
 /* Keyframes for subtle breathing effect */
 @keyframes subtle-breathing {
-  0%, 100% {
-      transform: scale(1); /* Normal size */
+
+  0%,
+  100% {
+    transform: scale(1);
+    /* Normal size */
   }
+
   50% {
-      transform: scale(1.03); /* Slightly larger */
+    transform: scale(1.03);
+    /* Slightly larger */
   }
 }
 
 .close-btn {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    font-size: 50px;
-    color: #333;
-    cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 50px;
+  color: #333;
+  cursor: pointer;
 }
 
 /* Breathing Bubble */
 .breathing-bubble {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 70px;
-    height: 70px;
-    background-color: #ff8fa3;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    animation: breathe 2s infinite ease-in-out;
-    z-index: 999;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  background-color: #ff8fa3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  animation: breathe 2s infinite ease-in-out;
+  z-index: 999;
 }
 
 .bubble-image {
-    width: 50px;
-    height: auto;
-    border-radius: 50%;
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
 }
 
 /* Breathing effect for the bubble */
 @keyframes breathe {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 /* Sidebar Styling */
@@ -244,90 +269,100 @@ body {
 /* Sidebar Bubble Container */
 /* Sidebar Bubble Container */
 .sidebar-bubble {
-    position: fixed;
-    left: 20px; /* Adjust as needed */
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 1000;
-    align-items: center; /* Center-align bubbles */
-    background: linear-gradient(45deg, rgba(106, 92, 188, 0.8)) url('images/twinkiling stars.gif');
-  }
-  
-  /* Welcome Bubble */
-  .welcome-bubble {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: #ff8fa3; /* Bubble background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  left: 20px;
+  /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+  align-items: center;
+  /* Center-align bubbles */
+  background: linear-gradient(45deg, rgba(106, 92, 188, 0.8)) url('images/twinkiling stars.gif');
+}
+
+/* Welcome Bubble */
+.welcome-bubble {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ff8fa3;
+  /* Bubble background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: breathing 2s infinite;
+  cursor: pointer;
+  background: linear-gradient(45deg, rgba(106, 92, 188, 0.8), rgba(106, 92, 188, 0.8)), url('images/twinkiling stars.gif');
+}
+
+/* Breathing Effect */
+@keyframes breathing {
+
+  0%,
+  100% {
+    transform: scale(1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: breathing 2s infinite;
-    cursor: pointer;
-    background: linear-gradient(45deg, rgba(106, 92, 188, 0.8), rgba(106, 92, 188, 0.8)), url('images/twinkiling stars.gif');
   }
-  
-  /* Breathing Effect */
-  @keyframes breathing {
-    0%, 100% {
-      transform: scale(1);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    50% {
-      transform: scale(1.1);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
+
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
-  
-  /* Bubble Image */
-  .bubble-image {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover; /* Ensures the image fits within the circle */
-  }
-  
-  /* Dialog Box */
-  .dialog-box {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #f5f5dc; /* Beige color for warmth */
-    color: #333; /* Text color */
-    padding: 8px 12px;
-    border-radius: 10px;
-    font-family: "Comic Sans MS", cursive;
-    font-size: 14px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    white-space: nowrap;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  
-  /* Show Dialog on Hover */
-  .welcome-bubble:hover .dialog-box {
-    opacity: 1;
-    transform: translate(-50%, -10px);
-  }
-  
-  /* Hidden by Default */
-  .dialog-box.hidden {
-    opacity: 0;
-    transform: translate(-50%, 0);
-    pointer-events: none;
-  }  
-  
+}
+
+/* Bubble Image */
+.bubble-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* Ensures the image fits within the circle */
+}
+
+/* Dialog Box */
+.dialog-box {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f5f5dc;
+  /* Beige color for warmth */
+  color: #333;
+  /* Text color */
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show Dialog on Hover */
+.welcome-bubble:hover .dialog-box {
+  opacity: 1;
+  transform: translate(-50%, -10px);
+}
+
+/* Hidden by Default */
+.dialog-box.hidden {
+  opacity: 0;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+}
+
 /* Bubble Icon */
 .bubble-icon {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #ff8fa3; /* Bubble color */
+  background-color: #ff8fa3;
+  /* Bubble color */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -337,15 +372,20 @@ body {
   cursor: pointer;
   transition: transform 0.3s, background-color 0.3s;
   background: linear-gradient(45deg, rgba(106, 92, 188, 0.8), rgba(106, 92, 188, 0.8)), url('images/twinkiling stars.gif');
-  background-size: cover; /* Ensures the image covers the bubble */
-  background-position: center; /* Centers the image within the bubble */
+  background-size: cover;
+  /* Ensures the image covers the bubble */
+  background-position: center;
+  /* Centers the image within the bubble */
 }
 
 /* Hover Effect */
 .bubble-icon:hover {
-  transform: scale(1.2); /* Increase size on hover */
-  background-color: #f472a9; /* Change color on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add a stronger shadow */
+  transform: scale(1.2);
+  /* Increase size on hover */
+  background-color: #f472a9;
+  /* Change color on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  /* Add a stronger shadow */
 }
 
 /* Bubble Click Active Effect */
@@ -355,8 +395,10 @@ body {
 }
 
 /* Adjust Space Between Sidebar Bubbles */
-.bubble-icon, .apod-bubble {
-  margin-top: 10px; /* Add extra margin */
+.bubble-icon,
+.apod-bubble {
+  margin-top: 10px;
+  /* Add extra margin */
 }
 
 /* APOD Bubble */
@@ -364,7 +406,8 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #ff8fa3; /* Bubble color */
+  background-color: #ff8fa3;
+  /* Bubble color */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -374,8 +417,10 @@ body {
   cursor: pointer;
   transition: transform 0.3s, background-color 0.3s;
   background: linear-gradient(45deg, rgba(106, 92, 188, 0.8), rgba(106, 92, 188, 0.8)), url('images/twinkiling stars.gif');
-  background-size: cover; /* Ensures the image covers the bubble */
-  background-position: center; /* Centers the image within the bubble */
+  background-size: cover;
+  /* Ensures the image covers the bubble */
+  background-position: center;
+  /* Centers the image within the bubble */
 }
 
 .apod-bubble:hover {
@@ -389,8 +434,10 @@ body {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #f5f5dc; /* Beige color for warmth */
-  color: #333; /* Text color */
+  background-color: #f5f5dc;
+  /* Beige color for warmth */
+  color: #333;
+  /* Text color */
   padding: 8px 12px;
   border-radius: 10px;
   font-family: "Comic Sans MS", cursive;
@@ -449,303 +496,360 @@ body {
 
 /* APOD Image */
 .apod-image {
-  max-width: 100%; /* Image scales within its container */
-  height: auto; /* Height adjusts automatically */
-  object-fit: contain; /* Keeps the aspect ratio intact */
-  display: block; /* Removes any inline-block spacing */
-  margin: 0 auto; /* Centers the image horizontally */
-  border-radius: 10px; /* Optional for rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  max-width: 100%;
+  /* Image scales within its container */
+  height: auto;
+  /* Height adjusts automatically */
+  object-fit: contain;
+  /* Keeps the aspect ratio intact */
+  display: block;
+  /* Removes any inline-block spacing */
+  margin: 0 auto;
+  /* Centers the image horizontally */
+  border-radius: 10px;
+  /* Optional for rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Optional shadow */
 }
 
 /* Style for the top bar with smooth color transitions */
 /* Style for the top bar with smooth color transitions */
 /* Basic styles for the top bar */
 .top-bar {
-    position: fixed; /* Fix the top bar at the top of the screen */
-    top: 0; /* Ensure it's at the top of the page */
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to right, #081828, #0f2449, #192c57);
-    height: 60px; /* Adjust as per your design */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10px;
-    color: #8092e4;
-    font-size: 24px;
-    font-family: 'Dancing script', cursive;
-    transition: background 5s ease;
-    cursor: none; /* Hide default cursor */
-    z-index: 1000; /* Ensure it's on top of other content */
-    overflow: hidden; /* To ensure glitter effect is contained */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  }
-  /* Custom cursor: Shooting star emoji */
-  .custom-cursor {
-    position: absolute;
-    pointer-events: none;
-    font-size: 24px;
-    transition: transform 0.3s ease;
-    animation: moveCursor 0.3s infinite;
-  }
-  
-  /* Animation for moving the shooting star cursor */
-  @keyframes moveCursor {
-    0% {
-      transform: translateY(0) translateX(0);
-    }
-    50% {
-      transform: translateY(20px) translateX(20px);
-    }
-    100% {
-      transform: translateY(0) translateX(0);
-    }
-  }
-  
-  /* Glitter star effect */
-  .star {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: white;
-    border-radius: 50%;
-    animation: glitter 1s ease-in-out infinite;
-  }
-  
-  @keyframes glitter {
-    0% {
-      opacity: 0;
-      transform: translateY(0) scale(0);
-    }
-    50% {
-      opacity: 1;
-      transform: translateY(20px) scale(1);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(40px) scale(0);
-    }
-  }
-  
-  /* Hover effect for the top bar */
-  .top-bar:hover {
-    background: linear-gradient(to right, #1d1680, #0d477e); /* Soft color on hover */
-  }
-  
-  /* Hover effect for logo and text in the top bar */
-  .top-bar h1, .top-bar img {
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  .top-bar h1:hover, .top-bar img:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-    color: #2d0edd; /* Change color on hover */
-  }
-  .heading {
-    font-size: 36px;
-    color: #ffb3ff;
-    position: relative;
-    text-shadow: 0 0 10px #ff66ff, 0 0 20px #ff99ff;
+  position: fixed;
+  /* Fix the top bar at the top of the screen */
+  top: 0;
+  /* Ensure it's at the top of the page */
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to right, #081828, #0f2449, #192c57);
+  height: 60px;
+  /* Adjust as per your design */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  color: #8092e4;
+  font-size: 24px;
+  font-family: 'Dancing script', cursive;
+  transition: background 5s ease;
+  cursor: none;
+  /* Hide default cursor */
+  z-index: 1000;
+  /* Ensure it's on top of other content */
+  overflow: hidden;
+  /* To ensure glitter effect is contained */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
+
+/* Custom cursor: Shooting star emoji */
+.custom-cursor {
+  position: absolute;
+  pointer-events: none;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+  animation: moveCursor 0.3s infinite;
+}
+
+/* Animation for moving the shooting star cursor */
+@keyframes moveCursor {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(20px) translateX(20px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Glitter star effect */
+.star {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  animation: glitter 1s ease-in-out infinite;
+}
+
+@keyframes glitter {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(20px) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(40px) scale(0);
+  }
+}
+
+/* Hover effect for the top bar */
+.top-bar:hover {
+  background: linear-gradient(to right, #1d1680, #0d477e);
+  /* Soft color on hover */
+}
+
+/* Hover effect for logo and text in the top bar */
+.top-bar h1,
+.top-bar img {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.top-bar h1:hover,
+.top-bar img:hover {
+  transform: scale(1.1);
+  /* Slightly enlarge on hover */
+  color: #2d0edd;
+  /* Change color on hover */
+}
+
+.heading {
+  font-size: 36px;
+  color: #ffb3ff;
+  position: relative;
+  text-shadow: 0 0 10px #ff66ff, 0 0 20px #ff99ff;
+}
+
 /* Shimmer Effect */
 @keyframes shimmer {
-    0%, 100% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
+
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
 }
 
 /* Responsive Design */
 @media screen and (max-width: 600px) {
-    .heading-container {
-        flex-direction: column;
-    }
+  .heading-container {
+    flex-direction: column;
+  }
 
-    .vine {
-        width: 60px;
-        height: 150px;
-    }
+  .vine {
+    width: 60px;
+    height: 150px;
+  }
 
-    .heading {
-        font-size: 28px;
-    }
+  .heading {
+    font-size: 28px;
+  }
 }
-
 
 /* Embedded Boxes */
 .embedded-box {
-    background: #f5f5dc; /* Beige color for warmth */
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 20px 0;
-    position: relative;
-    color: #4a4a4a; /* Text color for contrast */
-    transition: all 0.3s ease;
+  background: #f5f5dc;
+  /* Beige color for warmth */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  position: relative;
+  color: #4a4a4a;
+  /* Text color for contrast */
+  transition: all 0.3s ease;
 }
 
 .embedded-box h2 {
-    font-size: 24px;
-    margin-bottom: 16px;
+  font-size: 24px;
+  margin-bottom: 16px;
 }
 
 /* Draggable Boxes */
 .draggable-box {
-    position: absolute;
-    width: 250px;
-    height: 230px; /* Adjust the height for different sizes */
-    padding: 16px;
-    border-radius: 12px;
-    background-color: #f5f5dc; /* Beige color for warmth */
-    color: #D9D9D9; /* Text color for contrast */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease; /* Smooth transitions */
-    margin-top: auto 0px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    background: linear-gradient(45deg, rgba(106, 92, 188, 0.8), rgba(62, 140, 65, 0.8)), url('images/star sky.gif'); /* Add your image path here */
+  position: absolute;
+  width: 250px;
+  height: 230px;
+  /* Adjust the height for different sizes */
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #f5f5dc;
+  /* Beige color for warmth */
+  color: #D9D9D9;
+  /* Text color for contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  /* Smooth transitions */
+  margin-top: auto 0px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(45deg, rgba(106, 92, 188, 0.8), rgba(62, 140, 65, 0.8)), url('images/star sky.gif');
+  /* Add your image path here */
 }
 
 .draggable-box h2 {
-    font-size: 24px;
-    margin-bottom: 16px;
+  font-size: 24px;
+  margin-bottom: 16px;
 }
 
 /* Buttons for Embedded and Draggable Boxes */
 .embedded-box ul li button,
 .draggable-box ul li button {
-    background-color: #5446cc; /* Pink tone for buttons */
-    color: #D9D9D9;
-    border: none;
-    border-radius: 10px;
-    padding: 8px 4px;
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
-    margin: 2px;
-    transition: background-color 0.3s, transform 0.2s;
-    background: linear-gradient(45deg, #6A5ACD, #7B68EE);
-    color: #D9D9D9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #5446cc;
+  /* Pink tone for buttons */
+  color: #D9D9D9;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 4px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  margin: 2px;
+  transition: background-color 0.3s, transform 0.2s;
+  background: linear-gradient(45deg, #6A5ACD, #7B68EE);
+  color: #D9D9D9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .embedded-box ul li button:hover,
 .draggable-box ul li button:hover {
-    background-color: #8A2BE2;
-    transform: scale(1.05);
+  background-color: #8A2BE2;
+  transform: scale(1.05);
 }
 
 .embedded-box ul li button:active,
 .draggable-box ul li button:active {
-    background-color: #8A2BE2;
-    transform: scale(0.95);
+  background-color: #8A2BE2;
+  transform: scale(0.95);
 }
 
 /* Timer Selection and Countdown Display */
 .timer-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f5f5dc;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f5f5dc;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
 }
+
 .timer {
-    font-size: 16px;
-    margin-bottom: 5px solid;
-    text-align: center; /* Align text to the center */
-    background-color: #8A2BE2; /* Dark color for the background */
-    color: #D9D9D9; /* Light text color for contrast */
-    padding: 3px; /* Add some padding for spacing */
-    border-radius: 12px; /* Rounded corners */
-    width: 70px; /* Width of the timer box */
-    display: block; /* Ensure the box takes up space like a block element */
-    margin: 0 auto; /* Center align the timer box horizontally */
+  font-size: 16px;
+  margin-bottom: 5px solid;
+  text-align: center;
+  /* Align text to the center */
+  background-color: #8A2BE2;
+  /* Dark color for the background */
+  color: #D9D9D9;
+  /* Light text color for contrast */
+  padding: 3px;
+  /* Add some padding for spacing */
+  border-radius: 12px;
+  /* Rounded corners */
+  width: 70px;
+  /* Width of the timer box */
+  display: block;
+  /* Ensure the box takes up space like a block element */
+  margin: 0 auto;
+  /* Center align the timer box horizontally */
 }
 
 .timer-container h2 {
-    font-size: 38px;
-    margin-bottom: auto;
+  font-size: 38px;
+  margin-bottom: auto;
 }
 
 .timer-container .timer-duration {
-    font-size: 40px;
-    margin-bottom: auto;
+  font-size: 40px;
+  margin-bottom: auto;
 }
 
 /* Timer Dropdown */
 /* Buttons for Timer Controls */
 .timer-msg button {
-    background-color: #5446cc; /* Pink tone for buttons */
-    color: #D9D9D9;
-    border: none;
-    border-radius: 10px; /* Slightly more rounded */
-    padding: 12px 20px; /* Slightly more padding for a softer look */
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.3s ease;
-    margin: 8px;
+  background-color: #5446cc;
+  /* Pink tone for buttons */
+  color: #D9D9D9;
+  border: none;
+  border-radius: 10px;
+  /* Slightly more rounded */
+  padding: 12px 20px;
+  /* Slightly more padding for a softer look */
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.3s ease;
+  margin: 8px;
 }
 
 .timer-msg button:hover {
-    background-color: #4736e0; /* Slightly darker pink for hover */
-    transform: scale(1.05); /* Slight scale-up effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  background-color: #4736e0;
+  /* Slightly darker pink for hover */
+  transform: scale(1.05);
+  /* Slight scale-up effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Add shadow on hover */
 }
 
 .timer-msg button:active {
-    background-color: #5446cc; /* Even darker pink for active */
-    transform: scale(0.95); /* Slight scale-down effect */
-    box-shadow: none; /* Remove shadow on active */
+  background-color: #5446cc;
+  /* Even darker pink for active */
+  transform: scale(0.95);
+  /* Slight scale-down effect */
+  box-shadow: none;
+  /* Remove shadow on active */
 }
 
 /* Timer Dropdown */
 .timer-duration-select {
-    background-color: #6f77e2; /* Light pink */
-    color: #D9D9D9;
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 12px;
-    border: none;
-    width: 100%;
-    cursor: pointer;
-    margin-bottom: 15px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #6f77e2;
+  /* Light pink */
+  color: #D9D9D9;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timer-duration-select:hover {
-    background-color: #A3E4F9; /* Slightly darker pink for hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+  background-color: #A3E4F9;
+  /* Slightly darker pink for hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add shadow on hover */
 }
 
 /* Timer Countdown Display */
 .timer-display {
-    font-size: 32px;
-    font-weight: bold;
-    color: #161111;
-    margin-bottom: 15px;
-    text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #161111;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 /* Countdown Timer Styling */
 .countdown-timer {
-    font-size: 32px;
-    font-weight: bold;
-    color: #8A2BE2;
-    margin-top: 15px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #8A2BE2;
+  margin-top: 15px;
 }
+
 /* Input field styling */
 
-        /* Task List Container */
+/* Task List Container */
 /* Task Container */
 .task-container {
   background-color: #F7C5E6;
@@ -758,46 +862,48 @@ body {
 }
 
 /* Task List Container Styling */
-        /* Task List */
+/* Task List */
 .task-list {
-          list-style-type: none;
-          padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
-      /* Individual Task Item */
+/* Individual Task Item */
 .task-item {
-          font-size: 14px;
-         font-family: Arial, Helvetica, sans-serif;
-          padding: 5px;
-          margin: 5px 0;
-          background-color: #0c2446;
-          text-emphasis-color: #0000;
-          border-radius: 5px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          cursor: pointer;
-          outline: none;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px;
+  margin: 5px 0;
+  background-color: #0c2446;
+  text-emphasis-color: #0000;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
 }
 
-      /* Checkmark */
+/* Checkmark */
 .checkmark {
-           width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background-color: #6f77e2;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #ffffff;
-          font-size: 14px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #6f77e2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 14px;
 }
 
 /* Checkmark when task is completed */
 .checkmark.checked {
-  background-color: #000000;  /* Change background when checked */
-  color: #ffffff;  /* Keep checkmark color white */
+  background-color: #000000;
+  /* Change background when checked */
+  color: #ffffff;
+  /* Keep checkmark color white */
 }
 
 
@@ -829,7 +935,6 @@ body {
   text-decoration: dotted;
 }
 
-
 /* Add task button */
 .add-task-button {
   width: 15%;
@@ -854,38 +959,55 @@ body {
 
 /* Hidden Class */
 .hidden {
-    display: none;
+  display: none;
 }
-.sidebar, .embedded-box, .timer, .task-box, .music-box {
-    font-family: 'Dancing script', cursive;
+
+.sidebar,
+.embedded-box,
+.timer,
+.task-box,
+.music-box {
+  font-family: 'Dancing script', cursive;
 }
+
 .content {
-    display: flex;
+  display: flex;
 }
-html, body {
-    margin: 0 auto; /* Center without adding excess spacing */
-    padding: 10px; /* Add minimal padding */
-    width: 100%; /* Set the width to 100% of the viewport */
-    height: 100%; /* Set the height to 100% of the viewport */
-    overflow: hidden; /* Prevent scrolling */
-  }
-  
-  .main-container {
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    display: flex; /* Flexbox layout for child elements */
-    flex-direction: column; /* Stack children vertically (optional) */
-    position: relative; /* Make it the base for absolute positioning */
-  }
-  
-  .ghibli-wallpaper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-  }
-  
+
+html,
+body {
+  margin: 0 auto;
+  /* Center without adding excess spacing */
+  padding: 10px;
+  /* Add minimal padding */
+  width: 100%;
+  /* Set the width to 100% of the viewport */
+  height: 100%;
+  /* Set the height to 100% of the viewport */
+  overflow: hidden;
+  /* Prevent scrolling */
+}
+
+.main-container {
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  display: flex;
+  /* Flexbox layout for child elements */
+  flex-direction: column;
+  /* Stack children vertically (optional) */
+  position: relative;
+  /* Make it the base for absolute positioning */
+}
+
+.ghibli-wallpaper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}

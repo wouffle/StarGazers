@@ -1,96 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-  
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <title>StarGazers</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <header class="top-bar">
-    </div>
-     <!-- Heading with Vines -->
-     <div class="heading-container">
+    <!-- Heading with Vines -->
+    <div class="heading-container">
       <h1 class="heading">Stargazers</h1>
-  </div>
+    </div>
   </header>
- <!-- Cosmic Whispers Section -->
- <div id="cosmic-whispers-box">
-  <h2>Cosmic whispers</h2>
-  <p id="cosmic-whisper-content">"The stars remind us we're never alone."</p>
-  <div class="button-group">
-    <button id="favorite-btn" title="Favorite">❤</button>
-    <button id="share-btn" title="Share">🔗</button>
-    <button id="next-btn" title="Next">➡</button>
+
+  <!-- Cosmic Whispers Section -->
+  <div id="cosmic-whispers-box">
+    <h2>Cosmic whispers</h2>
+    <p id="cosmic-whisper-content">"The stars remind us we're never alone."</p>
+    <div class="button-group">
+      <button id="favorite-btn" title="Favorite">❤</button>
+      <button id="share-btn" title="Share">🔗</button>
+      <button id="next-btn" title="Next">➡</button>
+    </div>
+    <div id="stars-container"></div>
   </div>
-  <div id="stars-container"></div>
-</div>
 
+  <!-- Greeting Pop-up -->
+  <div id="greeting-modal" class="greeting-modal">
+    <div class="greeting-content">
+      <span class="close-btn" onclick="closeGreeting()">&times;</span>
+      <img src="images/cute-animal.jpg" alt="Cute Animal" class="greeting-image">
+      <p>Welcome to our website! Here, you can enjoy fun features like music, Pomodoro Timers, task organizer, and many
+        more exiting things to come! This wesite is best of use for desktop users :)</p>
+    </div>
+  </div>
 
-      <!-- Greeting Pop-up -->
-      <div id="greeting-modal" class="greeting-modal">
-        <div class="greeting-content">
-            <span class="close-btn" onclick="closeGreeting()">&times;</span>
-            <img src="images/cute-animal.jpg" alt="Cute Animal" class="greeting-image">
-            <p>Welcome to our website! Here, you can enjoy fun features like music, Pomodoro Timers, task organizer, and many more exiting things to come! This wesite is best of use for desktop users :)</p>
-        </div>
-    </div>
-    <!-- Breathing Bubble -->
-    <div id="bubble" class="breathing-bubble" onclick="openGreeting()">
-        <img src="images/down bubble.gif" alt="Cute Character in Bubble" class="bubble-image">
-    </div>
+  <!-- Breathing Bubble -->
+  <div id="bubble" class="breathing-bubble" onclick="openGreeting()">
+    <img src="images/down bubble.gif" alt="Cute Character in Bubble" class="bubble-image">
+  </div>
+
   <div class="main-container">
     <aside class="sidebar">
+
       <nav>
-          <div class="sidebar-bubble">
-              <div class="welcome-bubble">
-                  <img src="images/welcome bubble.gif" alt="Welcome" class="bubble-image" />
-                  <div class="dialog-box hidden">Hey! You're here :) </div>
-              </div>
-  
-              <!-- Music Bubble Icon -->
-              <div class="bubble-icon" id="bubble1" onclick="showFunction('music-box')">
-                  ♫
-              </div>
-  
-              <!-- Timer Bubble Icon -->
-              <div class="bubble-icon" id="bubble2" onclick="showFunction('timer-box')">
-                  ⴵ
-              </div>
-  
-              <!-- Task Organizer Bubble Icon -->
-              <div class="bubble-icon" id="bubble3" onclick="showFunction('task-box')">
-                  ☑
-              </div>
-  
-              <!-- APOD Bubble Icon (Astronomy Picture of the Day) -->
-              <div class="apod-bubble" id="apodBubble" onclick="showAPOD()">
-                  <div class="apod-bubble-icon">
-                      🌌
-                  </div>
-                  <div class="apod-dialog-box hidden">
-                      Astronomy Picture of the Day
-                  </div>
-              </div>
+        <div class="sidebar-bubble">
+          <div class="welcome-bubble">
+            <img src="images/welcome bubble.gif" alt="Welcome" class="bubble-image" />
+            <div class="dialog-box hidden">Hey! You're here :) </div>
           </div>
+
+          <!-- Music Bubble Icon -->
+          <div class="bubble-icon" id="bubble1" onclick="showFunction('music-box')">
+            ♫
+          </div>
+
+          <!-- Timer Bubble Icon -->
+          <div class="bubble-icon" id="bubble2" onclick="showFunction('timer-box')">
+            ⴵ
+          </div>
+
+          <!-- Task Organizer Bubble Icon -->
+          <div class="bubble-icon" id="bubble3" onclick="showFunction('task-box')">
+            ☑
+          </div>
+
+          <!-- APOD Bubble Icon (Astronomy Picture of the Day) -->
+          <div class="apod-bubble" id="apodBubble" onclick="showAPOD()">
+            <div class="apod-bubble-icon">
+              🌌
+            </div>
+            <div class="apod-dialog-box hidden">
+              Astronomy Picture of the Day
+            </div>
+          </div>
+        </div>
       </nav>
-  </aside>
-  
-  <!-- APOD Modal to display image as a wallpaper -->
-  <div class="apod-modal" id="apodModal">
+
+    </aside>
+
+    <!-- APOD Modal to display image as a wallpaper -->
+    <div class="apod-modal" id="apodModal">
       <div class="apod-modal-text" id="apodModalText"></div>
       <button class="apod-modal-close" id="apodModalClose">Go Back</button>
-  </div>
+    </div>
 
     <div class="content">
+
       <div class="ghibli-wallpaper" id="wallpaper"></div>
       <div class="wallpaper-images" style="display: none;">
-      </div>      
-  
+      </div>
+
       <section id="music-box" class="hidden embedded-box draggable-box">
         <h2>Music⋆.˚✮🎧✮˚.⋆</h2>
         <ul>
@@ -98,9 +104,10 @@
           <li><button onclick="playMusic('productive')">‧₊˚🖇️✩Productive ₊˚🎧⊹♡</button></li>
           <li><button onclick="playMusic('focus')">𓆝 𓆟 Focus 𓆞 𓆝 𓆟</button></li>
         </ul>
-        <iframe id="spotify-player" src="" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe id="spotify-player" src="" width="300" height="380" frameborder="0" allowtransparency="true"
+          allow="encrypted-media"></iframe>
       </section>
-  
+
       <section id="timer-box" class="hidden embedded-box draggable-box">
         <h2>Pomodoro Timer⋆⭒˚｡⋆</h2>
         <div>
@@ -111,17 +118,18 @@
             <option value="75">75 Minutes</option>
           </select>
         </div>
-      
+
         <div id="timer" class="timer">𝟷𝟷:𝟷𝟷</div>
         <div id="timer-msg" class="timer-msg">
           <button id="start-btn" onclick="startTimer()">▶</button>
           <button id="pause-btn" onclick="pauseTimer()">❚❚</button>
           <button id="reset-btn" onclick="resetTimer()">↻</button>
         </div>
+
         <!-- Countdown Timer -->
         <div id="countdown" class="countdown-timer"></div>
       </section>
-      
+
       <section id="task-box" class="hidden embedded-box draggable-box">
         <h2>Task Organizer ✎ᝰ.</h2>
         <div class="task-input-container" id="task-input-container">
@@ -132,12 +140,13 @@
           <!-- Tasks will be added here -->
         </ul>
       </section>
-      
-    
-    
+
     </div>
+
   </div>
-  
+
   <script src="script.js"></script>
- </body>
- </html> 
+
+</body>
+
+</html>
