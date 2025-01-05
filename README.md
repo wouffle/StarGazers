@@ -68,7 +68,7 @@ This project is inspired by the love for the night sky and the desire to create 
 ---
 
 ## 🌌 How to Use  
-- Link to my live website on GitHub pages - https://wouffle.github.io/StarGazers/
+- Link to my live website on GitHub pages - https://star-gazers-neon.vercel.app/
 ---
 ## 🌻Thankyou! 
 - Star ⭐ the repository if you enjoy my project :)
